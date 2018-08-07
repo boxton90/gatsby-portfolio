@@ -1,0 +1,8 @@
+// Importing Bulma from node_modules
+@import "~bulma/bulma.sass";
+
+// Importing common styles
+@import "./common.scss";
+
+// Importing layout components styles
+@import "./header/header.scss"
