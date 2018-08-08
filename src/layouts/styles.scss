@@ -1,3 +1,9 @@
+// Variables
+$narrow-screen : 80rem;
+
+// Bulma variables
+$link: #4a4a4a;
+
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
 
@@ -5,4 +11,5 @@
 @import "./common.scss";
 
 // Importing layout components styles
-@import "./header/header.scss"
+@import "./header/header.scss";
+@import "./navigation/navigation.scss";
