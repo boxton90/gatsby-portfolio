@@ -8,6 +8,9 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
     "bulma": "^0.7.1",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",

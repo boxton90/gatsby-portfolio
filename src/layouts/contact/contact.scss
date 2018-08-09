@@ -1,0 +1,13 @@
+.fab{
+    color: $brand-icon-color;
+    &.linkedin{
+        &:hover{
+            color: $brand-linkedin-color;
+        }
+    }
+    &.github{
+        &:hover{
+            color: $brand-github-color;
+        }
+    }
+}

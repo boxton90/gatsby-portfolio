@@ -1,5 +1,11 @@
 import React from 'react'
+// Styles
 import './styles.scss'
+// FontAwesome Icons
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+library.add(fab)
+// Components
 import Navigation from './navigation/navigation'
 import Header from './header/header'
 import Skills from './skills/skills'
