@@ -1,0 +1,6 @@
+.box{
+    box-shadow: 4px 4px 30px #c3c3c3;
+    .content h2:not(:first-child) {
+        margin-top: 1rem;
+    }
+}
