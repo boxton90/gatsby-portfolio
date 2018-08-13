@@ -1,0 +1,11 @@
+.card{
+    box-shadow: 4px 4px 30px #c3c3c3;
+    transition: all .5s linear;
+    border-radius: 10px;
+    .card-content{
+        border-radius: 10px;
+    }
+    img{
+        border-radius: 10px;
+    }
+}
