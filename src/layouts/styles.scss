@@ -19,8 +19,8 @@ $section-padding: 1.5rem 1.5rem;
 @import "./common.scss";
 
 // Importing layout components styles
-@import "./header/header.scss";
 @import "./navigation/navigation.scss";
+@import "./header/header.scss";
 @import "./about/about.scss";
 @import "./contact/contact.scss";
 @import "./footer/footer.scss";

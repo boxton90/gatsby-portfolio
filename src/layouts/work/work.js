@@ -1,7 +1,44 @@
 import React, { Component } from 'react'
 import Card from '../../components/card/card'
+import emiratesImg from "../../assets/emirates.jpg"
+import angularImg from "../../assets/angular.png"
+import ucoImg from "../../assets/uco.jpg"
+
 
 class Work extends Component {
+
+  constructor(props) {
+    super(props);
+    this.emiratesProjectInfo = {
+      imgPath: emiratesImg,
+      title: 'Emirates Web Application',
+      desc: `Currently working as Front-End developer on Emirates Mobile
+      Web Application being part of development and improvement of UI & UX
+      through HTML/CSS and JS technologies.
+    `,
+      tagsList: ['HTML', 'CSS', 'JS']
+    }
+
+    this.AngularProjectInfo = {
+      imgPath: angularImg,
+      title: 'Trip Sorter Web App',
+      desc: `Web application developed with support of Angular CLI
+      and Bulma CSS that simulated a trip search engine application.
+    `,
+      tagsList: ['HTML', 'CSS', 'BULMA', 'TYPESCRIPT']
+    }
+
+    this.ucoProjectInfo = {
+      imgPath: ucoImg,
+      title: 'Java Applet',
+      desc: `
+      Complete development of a Java Applet for the Statistical Department of the
+      University of Cordoba related to linear regression and correlation concepts.
+    `,
+      tagsList: ['JAVA']
+    }
+  }
+
   render() {
     return (
       <section className="section">
@@ -18,13 +55,13 @@ class Work extends Component {
               </p>
             </div>
             <div className="column is-one-third">
-              <Card></Card>
+              <Card contentData={this.emiratesProjectInfo}></Card>
             </div>
             <div className="column is-one-third">
-              <Card></Card>
+              <Card contentData={this.AngularProjectInfo}></Card>
             </div>
             <div className="column is-one-third">
-              <Card></Card>
+              <Card contentData={this.ucoProjectInfo}></Card>
             </div>
           </div>
         </div>
