@@ -10,6 +10,7 @@ $light-black-color: #4a4a4a;
 
 // Bulma variables
 $link: $light-black-color;
+$section-padding: 1.5rem 1.5rem;
 
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
@@ -22,3 +23,4 @@ $link: $light-black-color;
 @import "./navigation/navigation.scss";
 @import "./about/about.scss";
 @import "./contact/contact.scss";
+@import "./footer/footer.scss";
