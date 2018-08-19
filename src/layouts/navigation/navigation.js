@@ -2,6 +2,31 @@ import React, { Component } from 'react'
 
 class Navigation extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isTransparent: true
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = (e) => {
+        const breakpoint = 400
+        if (window.scrollY < breakpoint) {
+            this.setState({ isTransparent: true });
+        }
+        else{
+            this.setState({ isTransparent: false }); 
+        }
+    }
+
     toggleMenu(e) {
         const navBurger = e.target;
         const navMenu = document.querySelector('.navbar-menu');
@@ -11,7 +36,7 @@ class Navigation extends Component {
 
     render() {
         return (
-            <nav className="navbar is-transparent is-fixed-top">
+            <nav className={`navbar ${(this.state.isTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                 <div className="navbar-brand">
                     <p className="navbar-item logo" href="https://bulma.io">DFR</p>
                     <div className="navbar-burger burger" onClick={this.toggleMenu}>

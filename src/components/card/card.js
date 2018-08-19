@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './card.scss'
 
 export default (props) => (
@@ -14,8 +14,8 @@ export default (props) => (
                 <p>{props.contentData.desc}</p>
             </div>
             <div className="tags">
-                {props.contentData.tagsList.map(tag => {
-                    return <span className="tag">{tag}</span>
+                {props.contentData.tagsList.map((tag,index) => {
+                    return <span key={index} className="tag">{tag}</span>
                 })}
             </div>
         </div>

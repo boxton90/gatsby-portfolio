@@ -11,9 +11,17 @@ export default (props) => (
                     <h2 className="is-2">{props.contentData.title}</h2>
                     <p>{props.contentData.desc}</p>
                     <h4 className="is-4">{props.contentData.langTitle}</h4>
-                    <p>{props.contentData.langList.join(', ')}</p>
+                    <div className="tags is-centered">
+                        {props.contentData.langList.map((lang, index) => {
+                            return <span key={index} className="tag">{lang}</span>
+                        })}
+                    </div>
                     <h4 className="is-4">{props.contentData.toolsTitle}</h4>
-                    <p>{props.contentData.toolsList.join(', ')}</p>
+                    <div className="tags is-centered">
+                        {props.contentData.toolsList.map((tool, index) => {
+                            return <span key={index} className="tag">{tool}</span>
+                        })}
+                    </div>
                 </div>
             </div>
         </article>

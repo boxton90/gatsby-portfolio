@@ -5,7 +5,7 @@ import './styles.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faTerminal, faHeart } from '@fortawesome/free-solid-svg-icons'
-library.add(fab,faTerminal, faHeart)
+library.add(fab, faTerminal, faHeart)
 // Components
 import Navigation from './navigation/navigation'
 import Header from './header/header'
