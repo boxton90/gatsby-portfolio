@@ -1,6 +1,6 @@
 .fab{
     color: $brand-icon-color;
-    transition: color .3s ease-in-out; 
+    transition: color $ease-in-out-transition; 
     &.linkedin{
         &:hover{
             color: $brand-linkedin-color;

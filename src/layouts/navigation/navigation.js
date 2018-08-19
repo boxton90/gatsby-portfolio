@@ -4,8 +4,10 @@ class Navigation extends Component {
 
     constructor(props) {
         super(props);
+        this.transparencyBreakpoint = 400;
         this.state = {
-            isTransparent: true
+            isTransparent: true,
+            isMenuActive: false
         };
     }
 
@@ -17,36 +19,41 @@ class Navigation extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll = (e) => {
-        const breakpoint = 400
-        if (window.scrollY < breakpoint) {
-            this.setState({ isTransparent: true });
-        }
-        else{
-            this.setState({ isTransparent: false }); 
+    handleScroll = () => {
+        if (!this.state.isMenuActive) {
+            if (window.scrollY < this.transparencyBreakpoint) {
+                this.setState({ isTransparent: true });
+            }
+            else {
+                this.setState({ isTransparent: false });
+            }
         }
     }
 
-    toggleMenu(e) {
-        const navBurger = e.target;
-        const navMenu = document.querySelector('.navbar-menu');
-        navBurger.classList.toggle('is-active');
-        navMenu.classList.toggle('is-active');
+    toggleMenu = () => {
+        this.setState(prevState => ({
+            isMenuActive: !prevState.isMenuActive
+        }));
+        if (window.scrollY < this.transparencyBreakpoint) {
+            this.setState(prevState => ({
+                isTransparent: !prevState.isTransparent
+            }));
+        }
     }
 
     render() {
         return (
             <nav className={`navbar ${(this.state.isTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                 <div className="navbar-brand">
-                    <p className="navbar-item logo" href="https://bulma.io">DFR</p>
-                    <div className="navbar-burger burger" onClick={this.toggleMenu}>
+                    <p className="navbar-item logo">DFR</p>
+                    <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </div>
 
-                <div className="navbar-menu">
+                <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
                     <div className="navbar-end">
                         <a className="navbar-item">Home</a>
                         <a className="navbar-item">Skills</a>

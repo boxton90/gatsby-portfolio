@@ -1,4 +1,5 @@
 nav {
+    transition: background-color $ease-in-out-transition;
     &.navbar.is-transparent{
         background-color: transparent;
     }
