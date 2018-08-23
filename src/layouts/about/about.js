@@ -2,7 +2,7 @@ import React from 'react'
 import avatar from "../../assets/avatar.jpg"
 
 export default () => (
-  <section className="section has-text-centered">
+  <section id="about" className="section has-text-centered">
     <div className="container">
       <h1 className="title">About me</h1>
       <figure className="image avatar is-128x128">

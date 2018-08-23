@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => (
   <header>
-    <section className="hero is-fullheight">
+    <section id="home" className="hero is-fullheight">
       <div className="hero-body">
         <div className="container">
           <h2 className="subtitle">Hello</h2>

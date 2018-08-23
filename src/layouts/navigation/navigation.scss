@@ -11,6 +11,7 @@ nav {
     .navbar-item{
         padding: 0;
         margin: 1rem;
+        text-transform: capitalize;
         &:hover{
             border-bottom: 1px solid;
             padding: 0;

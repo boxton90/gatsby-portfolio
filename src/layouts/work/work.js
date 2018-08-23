@@ -41,7 +41,7 @@ class Work extends Component {
 
   render() {
     return (
-      <section className="section">
+      <section id="work" className="section">
         <div className="container">
           <h1 className="title">Latest work</h1>
           <div className="columns">

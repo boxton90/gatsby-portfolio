@@ -5,6 +5,7 @@ class Navigation extends Component {
     constructor(props) {
         super(props);
         this.transparencyBreakpoint = 400;
+        this.navItemsList = ['skills', 'work', 'about', 'contact'];
         this.state = {
             isTransparent: true,
             isMenuActive: false
@@ -41,11 +42,19 @@ class Navigation extends Component {
         }
     }
 
+    doScrollIntoView = (e) => {
+        const view = e.currentTarget.dataset.view;
+        document.querySelector(`${view}`).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
     render() {
         return (
             <nav className={`navbar ${(this.state.isTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                 <div className="navbar-brand">
-                    <p className="navbar-item logo">DFR</p>
+                    <a data-view="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>DFR</a>
                     <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
                         <span></span>
                         <span></span>
@@ -55,11 +64,9 @@ class Navigation extends Component {
 
                 <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
                     <div className="navbar-end">
-                        <a className="navbar-item">Home</a>
-                        <a className="navbar-item">Skills</a>
-                        <a className="navbar-item">Work</a>
-                        <a className="navbar-item">About</a>
-                        <a className="navbar-item">Contact</a>
+                        {this.navItemsList.map((item, index) => {
+                            return <a key={index} data-view={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a>
+                        })}
                     </div>
                 </div>
             </nav>

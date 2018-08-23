@@ -20,7 +20,7 @@ class Skills extends Component {
 
   render() {
     return (
-      <section className="section">
+      <section id="skills" className="section">
         <div className="container">
           <h1 className="title">Skills</h1>
           <div className="columns">

@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default () => (
-  <section className="section has-text-centered">
+  <section id="contact" className="section has-text-centered">
     <div className="container">
       <h1 className="title">Contact me</h1>
       <div className="columns is-mobile is-multiline is-centered">
