@@ -12,4 +12,10 @@ header{
             width: 100vw;
         }
     }
+    .scrollDownIcon{
+        margin: auto;
+        position: relative;
+        bottom: 2rem;
+        animation: floating 2.5s infinite;
+    }
 }
