@@ -22,9 +22,9 @@ class Skills extends Component {
     return (
       <section id="skills" className="section">
         <div className="container">
-          <h1 className="title">Skills</h1>
+          <h1 data-aos="zoom-out" className="title">Skills</h1>
           <div className="columns">
-            <div className="column">
+            <div data-aos="fade-up" className="column">
               <p>American bobtail tiger but bengal sphynx egyptian mau or burmese lion.
                 Devonshire rex. Puma ragdoll, and mouser yet panther bombay yet malkin for panther.
                 Kitten. Kitten norwegian forest for tom for grimalkin so puma so siberian.
@@ -32,7 +32,7 @@ class Skills extends Component {
                 Jaguar tom for russian blue lynx. Puma cornish rex so egyptian mau and jaguar so mouser.
                 Havana brown thai for devonshire rex birman yet bobcat or balinese.</p>
             </div>
-            <div className="column">
+            <div data-aos="zoom-in-left" className="column">
               <Box contentData={this.frontendInfo}></Box>
             </div>
         </div>

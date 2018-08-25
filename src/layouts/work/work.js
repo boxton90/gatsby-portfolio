@@ -43,9 +43,9 @@ class Work extends Component {
     return (
       <section id="work" className="section">
         <div className="container">
-          <h1 className="title">Latest work</h1>
+          <h1 data-aos="zoom-out" className="title">Latest work</h1>
           <div className="columns">
-            <div className="column is-one-third">
+            <div data-aos="fade-up" className="column is-one-third">
               <p>American bobtail tiger but bengal sphynx egyptian mau or burmese lion.
                 Devonshire rex. Puma ragdoll, and mouser yet panther bombay yet malkin for panther.
                 Kitten. Kitten norwegian forest for tom for grimalkin so puma so siberian.
@@ -54,13 +54,13 @@ class Work extends Component {
                 Havana brown thai for devonshire rex birman yet bobcat or balinese.
               </p>
             </div>
-            <div className="column is-one-third">
+            <div data-aos="zoom-in-left" className="column is-one-third">
               <Card contentData={this.emiratesProjectInfo}></Card>
             </div>
-            <div className="column is-one-third">
+            <div data-aos="zoom-in-left" className="column is-one-third">
               <Card contentData={this.AngularProjectInfo}></Card>
             </div>
-            <div className="column is-one-third">
+            <div data-aos="zoom-in-left" className="column is-one-third">
               <Card contentData={this.ucoProjectInfo}></Card>
             </div>
           </div>

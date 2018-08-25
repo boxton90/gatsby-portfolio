@@ -3,8 +3,8 @@ import avatar from "../../assets/avatar.jpg"
 
 export default () => (
   <section id="about" className="section has-text-centered">
-    <div className="container">
-      <h1 className="title">About me</h1>
+    <div data-aos="fade-up" className="container">
+      <h1 data-aos="zoom-in" className="title">About me</h1>
       <figure className="image avatar is-128x128">
         <img className="is-rounded" src={avatar}></img>
       </figure>
