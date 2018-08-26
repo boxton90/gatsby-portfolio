@@ -6,16 +6,17 @@ nav {
     .logo{
         border-bottom: 1px solid;
         padding: 0;
-        margin: 1rem;
+        margin: .5rem;
     }
     .navbar-item{
         padding: 0;
-        margin: 1rem;
+        margin: .5rem;
         text-transform: capitalize;
         &:hover{
             border-bottom: 1px solid;
-            padding: 0;
-            margin: 1rem;
+        }
+        & a:hover, &.cta:hover{
+            border-bottom: none;
         }
     }
 }

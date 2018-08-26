@@ -17,6 +17,10 @@ header, nav, h1, h2, h3, h4, h5, h6{
     background-color: $light-black-color;
 }
 
+.is-hidden{
+    display: none;
+}
+
 @keyframes floating {
     0%,100% {
         transform: translateY(0px)
