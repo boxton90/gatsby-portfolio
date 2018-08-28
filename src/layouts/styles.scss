@@ -1,18 +1,5 @@
-// VARIABLES
-
-// Screen
-$narrow-screen : 80rem;
-// Colors
-$brand-icon-color: #d1d1e0;
-$brand-linkedin-color: #0077b5;
-$brand-github-color: #333;
-$light-black-color: #4a4a4a;
-// Transitions
-$ease-in-out-transition: .3s ease-in-out;
-
-// Bulma variables
-$link: $light-black-color;
-$section-padding: 1.5rem 1.5rem;
+// Importing variables
+@import "./variables.scss";
 
 // Importing Bulma from node_modules
 @import "~bulma/bulma.sass";
@@ -24,5 +11,4 @@ $section-padding: 1.5rem 1.5rem;
 @import "./navigation/navigation.scss";
 @import "./header/header.scss";
 @import "./about/about.scss";
-@import "./contact/contact.scss";
 @import "./footer/footer.scss";
