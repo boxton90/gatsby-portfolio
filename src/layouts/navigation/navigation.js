@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Button from '../../components/button/button';
 
 class Navigation extends Component {
 
@@ -68,10 +69,10 @@ class Navigation extends Component {
                 <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
                     <div className="navbar-end">
                         {this.navItemsList.map((item, index) => {
-                            return <div className="navbar-item"><a key={index} data-view={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
+                            return <div className="navbar-item" key={index}><a data-view={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
                         })}
                         <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                            <a className="button is-primary"><span>Say Hello 👋</span></a>
+                            <Button type="primary">Say Hello 👋</Button>
                         </div>
                     </div>
                 </div>
