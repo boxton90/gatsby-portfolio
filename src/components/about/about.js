@@ -6,7 +6,7 @@ export default () => (
     <div data-aos="fade-up" className="container">
       <h1 data-aos="zoom-in" className="title">About me</h1>
       <figure className="image avatar is-128x128">
-        <img className="is-rounded" src={avatar}></img>
+        <img className="is-rounded" src={avatar} alt="avatar"></img>
       </figure>
       <p>
         American bobtail tiger but bengal sphynx egyptian mau or burmese lion.

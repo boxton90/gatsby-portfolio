@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "gatsby-portfolio",
+  "description": "Daniel FR Portfolio",
   "license": "MIT",
   "scripts": {
     "dev": "gatsby develop",
@@ -14,8 +14,11 @@
     "@fortawesome/react-fontawesome": "0.1.0-11",
     "aos": "^2.3.3",
     "bulma": "^0.7.1",
-    "gatsby": "^1.9.277",
-    "gatsby-link": "^1.6.46",
-    "gatsby-plugin-sass": "^1.0.26"
+    "gatsby": "next",
+    "gatsby-link": "next",
+    "gatsby-plugin-sass": "next",
+    "node-sass": "^4.9.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   }
 }

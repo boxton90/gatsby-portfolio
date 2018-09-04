@@ -5,7 +5,7 @@ export default (props) => (
     <div className="card">
         <div className="card-image">
             <figure className="image is-16by9">
-                <img src={props.contentData.imgPath} alt="Placeholder image"></img>
+                <img src={props.contentData.imgPath} alt="project"></img>
             </figure>
         </div>
         <div className="card-content">

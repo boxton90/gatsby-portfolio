@@ -5,7 +5,6 @@ import './styles.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faTerminal, faHeart, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, faTerminal, faHeart, faAngleDoubleDown)
 // AOS
 import AOS from 'aos'
 // Components
@@ -17,12 +16,9 @@ import About from './about/about'
 import Contact from './contact/contact'
 import Footer from './footer/footer'
 
-class Index extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
+library.add(fab, faTerminal, faHeart, faAngleDoubleDown)
+class Layout extends Component {
+  
   componentDidMount() {
     AOS.init({
       // Global settings
@@ -58,4 +54,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default Layout;

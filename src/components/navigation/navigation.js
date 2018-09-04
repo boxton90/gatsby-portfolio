@@ -58,7 +58,7 @@ class Navigation extends Component {
         return (
             <nav className={`navbar ${(this.state.isNavTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                 <div className="navbar-brand">
-                    <a data-view="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>DFR</a>
+                    <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>DFR</a>
                     <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
                         <span></span>
                         <span></span>
@@ -69,10 +69,10 @@ class Navigation extends Component {
                 <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
                     <div className="navbar-end">
                         {this.navItemsList.map((item, index) => {
-                            return <div className="navbar-item" key={index}><a data-view={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
+                            return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
                         })}
                         <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                            <Button type="primary">Say Hello 👋</Button>
+                            <Button type="primary">Say Hello <span role="img" aria-label="hello">👋</span></Button>
                         </div>
                     </div>
                 </div>

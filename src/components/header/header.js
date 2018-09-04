@@ -3,11 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../../components/button/button';
 
 class Header extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
+  
   doScrollIntoView = (e) => {
     const view = e.currentTarget.dataset.view;
     document.querySelector(`${view}`).scrollIntoView({
@@ -25,7 +21,7 @@ class Header extends Component {
               <h2 className="subtitle">Hello</h2>
               <h1 className="title is-1">I'm Daniel</h1>
               <h2 className="subtitle is-2">a Front-end Developer</h2>
-              <Button type="primary" shape="rounded" size="medium">Say Hello 👋</Button>
+              <Button type="primary" shape="rounded" size="medium">Say Hello <span role="img" aria-label="hello">👋</span></Button>
             </div>
           </div>
           <div className="header-bg"></div>
