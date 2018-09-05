@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../../components/button/button';
+import { StaticQuery, graphql } from "gatsby"
 
 class Header extends Component {
-  
+
   doScrollIntoView = (e) => {
     const view = e.currentTarget.dataset.view;
     document.querySelector(`${view}`).scrollIntoView({
@@ -14,20 +15,31 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
-        <section id="home" className="hero is-fullheight">
-          <div className="hero-body">
-            <div className="container">
-              <h2 className="subtitle">Hello</h2>
-              <h1 className="title is-1">I'm Daniel</h1>
-              <h2 className="subtitle is-2">a Front-end Developer</h2>
-              <Button type="primary" shape="rounded" size="medium">Say Hello <span role="img" aria-label="hello">👋</span></Button>
+      <StaticQuery query={graphql`
+      query HeaderQuery {
+        contentfulHeader{
+          greetings
+          name
+          role
+          cta
+        }
+      }
+    `} render={data => (
+        <header>
+          <section id="home" className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container">
+                <h2 className="subtitle">{data.contentfulHeader.greetings}</h2>
+                <h1 className="title is-1">{data.contentfulHeader.name}</h1>
+                <h2 className="subtitle is-2">{data.contentfulHeader.role}</h2>
+                <Button type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <span role="img" aria-label="hello">👋</span></Button>
+              </div>
             </div>
-          </div>
-          <div className="header-bg"></div>
-          <FontAwesomeIcon className="scrollDownIcon" icon="angle-double-down" size="2x" data-view="#skills" onClick={this.doScrollIntoView}/>
-        </section>
-      </header>
+            <div className="header-bg"></div>
+            <FontAwesomeIcon className="scrollDownIcon" icon="angle-double-down" size="2x" data-view="#skills" onClick={this.doScrollIntoView} />
+          </section>
+        </header>
+      )} />
     );
   }
 }
