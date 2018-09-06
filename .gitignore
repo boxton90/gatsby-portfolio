@@ -63,3 +63,6 @@ yarn-error.log
 
 # package-lock.json
 package-lock.json
+
+# contentful-link-cleaner-config.json
+contentful-link-cleaner-config.json
