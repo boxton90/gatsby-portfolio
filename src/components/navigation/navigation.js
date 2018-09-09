@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Button from '../../components/button/button';
+import Button from '../../components/button/button'
+import { StaticQuery, graphql } from "gatsby"
 
 class Navigation extends Component {
 
@@ -25,12 +26,16 @@ class Navigation extends Component {
     handleScroll = () => {
         if (!this.state.isMenuActive) {
             if (window.scrollY < this.transparencyBreakpoint) {
-                this.setState({ isNavTransparent: true,
-                                isCTAVisible: false});
+                this.setState({
+                    isNavTransparent: true,
+                    isCTAVisible: false
+                });
             }
             else {
-                this.setState({ isNavTransparent: false,
-                                isCTAVisible: true});
+                this.setState({
+                    isNavTransparent: false,
+                    isCTAVisible: true
+                });
             }
         }
     }
@@ -56,27 +61,36 @@ class Navigation extends Component {
 
     render() {
         return (
-            <nav className={`navbar ${(this.state.isNavTransparent) ? "is-transparent" : ''} is-fixed-top`}>
-                <div className="navbar-brand">
-                    <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>DFR</a>
-                    <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
-                    <div className="navbar-end">
-                        {this.navItemsList.map((item, index) => {
-                            return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
-                        })}
-                        <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                            <Button type="primary">Say Hello <span role="img" aria-label="hello">👋</span></Button>
+            <StaticQuery query={graphql`
+            query NavigationQuery {
+              contentfulNavigation{
+                logo
+                items
+              }
+            }
+          `} render={data => (
+                    <nav className={`navbar ${(this.state.isNavTransparent) ? "is-transparent" : ''} is-fixed-top`}>
+                        <div className="navbar-brand">
+                            <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>{data.contentfulNavigation.logo}</a>
+                            <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </nav>
+
+                        <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
+                            <div className="navbar-end">
+                                {data.contentfulNavigation.items.map((item, index) => {
+                                    return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
+                                })}
+                                <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
+                                    <Button type="primary">Say Hello <span role="img" aria-label="hello">👋</span></Button>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                )} />
         );
     }
 }
