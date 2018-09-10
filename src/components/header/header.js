@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Button from '../../components/button/button';
+import Button from '../../components/button/button'
 import { StaticQuery, graphql } from "gatsby"
 
 class Header extends Component {
