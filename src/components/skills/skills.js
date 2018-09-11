@@ -7,7 +7,7 @@ class Skills extends Component {
   constructor(props) {
     super(props);
     this.frontendInfo = {
-      icon: 'terminal',
+      emoji: '👨‍💻',
       title: 'Front-end Development',
       desc: `British shorthair malkin and egyptian mau for siamese balinese,
       for donskoy,burmese.Havana brown sphynx lynx singapura or egyptian mau
@@ -31,6 +31,23 @@ class Skills extends Component {
             }
           }
         }
+        allContentfulSkill {
+          edges {
+            node {
+              emoji
+              title
+              desc {
+                internal {
+                  content
+                }
+              }
+              skillList {
+                title
+                items
+              }
+            }
+          }
+        }
       }
     `} render={data => (
           <section id="skills" className="section">
@@ -40,9 +57,9 @@ class Skills extends Component {
                 <div data-aos="fade-up" className="column">
                   <p>{data.contentfulSkills.desc.internal.content}</p>
                 </div>
-                <div data-aos="zoom-in-left" className="column">
-                  <Box contentData={this.frontendInfo}></Box>
-                </div>
+                {data.allContentfulSkill.edges.map((skill, index) => {
+                  return (<div key={index} data-aos="zoom-in-left" className="column"><Box contentData={skill.node}></Box></div>);
+                })}
               </div>
             </div>
           </section>

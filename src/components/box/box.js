@@ -1,5 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Emoji from '../../components/emoji/emoji'
 import './box.scss'
 
 export default (props) => (
@@ -7,21 +7,21 @@ export default (props) => (
         <article className="media">
             <div className="media-content">
                 <div className="content has-text-centered">
-                    <FontAwesomeIcon icon={props.contentData.icon} size="2x" />
+                    <Emoji emoji={props.contentData.emoji} size="2.5"/>
                     <h2 className="is-2">{props.contentData.title}</h2>
-                    <p>{props.contentData.desc}</p>
-                    <h4 className="is-4">{props.contentData.langTitle}</h4>
-                    <div className="tags is-centered">
-                        {props.contentData.langList.map((lang, index) => {
-                            return <span key={index} className="tag">{lang}</span>
-                        })}
-                    </div>
-                    <h4 className="is-4">{props.contentData.toolsTitle}</h4>
-                    <div className="tags is-centered">
-                        {props.contentData.toolsList.map((tool, index) => {
-                            return <span key={index} className="tag">{tool}</span>
-                        })}
-                    </div>
+                    <p>{props.contentData.desc.internal.content}</p>
+                    {props.contentData.skillList.map(((e,index) => {
+                        return(
+                            <div>
+                                <h4 key={index} className="is-4">{e.title}</h4>
+                                <div className="tags is-centered">
+                                    {e.items.map((item,index)=>{
+                                        return <span key={index} className="tag">{item}</span> 
+                                    })}
+                                </div>
+                            </div>
+                        );
+                    }))}
                 </div>
             </div>
         </article>

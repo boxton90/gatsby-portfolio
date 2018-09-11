@@ -86,7 +86,7 @@ class Navigation extends Component {
                                     return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
                                 })}
                                 <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                                    <Button type="primary">Say Hello <Emoji ariaLabel="hello" emoji="👋"/></Button>
+                                    <Button type="primary">Say Hello <Emoji emoji="👋"/></Button>
                                 </div>
                             </div>
                         </div>

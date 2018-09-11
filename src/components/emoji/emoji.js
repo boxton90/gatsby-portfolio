@@ -1,5 +1,10 @@
 import React from 'react';
 
 export default (props) => {
-    return (<span role="img" aria-label={props.ariaLabel}>{props.emoji}</span>);
+    
+    const styles = {
+        fontSize : props.size + 'rem'
+    }
+    
+    return (<span style={styles} role="img" aria-label="emoji">{props.emoji}</span>);
 }

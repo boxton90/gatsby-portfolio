@@ -33,7 +33,7 @@ class Header extends Component {
                 <h2 className="subtitle">{data.contentfulHeader.greetings}</h2>
                 <h1 className="title is-1">{data.contentfulHeader.name}</h1>
                 <h2 className="subtitle is-2">{data.contentfulHeader.role}</h2>
-                <Button type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji ariaLabel="hello" emoji="👋"/></Button>
+                <Button type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji emoji="👋"/></Button>
               </div>
             </div>
             <div className="header-bg"></div>
