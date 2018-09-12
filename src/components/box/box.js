@@ -12,7 +12,7 @@ export default (props) => (
                     <p>{props.contentData.desc.internal.content}</p>
                     {props.contentData.skillList.map(((e,index) => {
                         return(
-                            <div>
+                            <div className="section">
                                 <h4 key={index} className="is-4">{e.title}</h4>
                                 <div className="tags is-centered">
                                     {e.items.map((item,index)=>{

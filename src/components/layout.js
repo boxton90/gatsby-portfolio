@@ -4,7 +4,7 @@ import './styles.scss'
 // FontAwesome Icons
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faHeart, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 // AOS
 import AOS from 'aos'
 // Components
@@ -16,7 +16,7 @@ import About from './about/about'
 import Contact from './contact/contact'
 import Footer from './footer/footer'
 
-library.add(fab, faHeart, faAngleDoubleDown)
+library.add(fab, faAngleDoubleDown)
 class Layout extends Component {
   
   componentDidMount() {

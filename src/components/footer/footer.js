@@ -1,10 +1,18 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { StaticQuery, graphql } from 'gatsby'
 
 export default () => (
-  <footer className="footer">
-    <div className="content has-text-centered">
-      <p>This website was handcrafted with<br></br><FontAwesomeIcon icon="heart" size="1x" color="red" /><br></br> by Daniel Fernandez Rabal</p>
-    </div>
-  </footer>
+  <StaticQuery query={graphql`
+  query FooterQuery {
+    contentfulFooter{
+      content{
+        content
+      }
+    }  
+  }
+  `} render={data => (
+    <footer className="footer">
+      <div className="content has-text-centered" dangerouslySetInnerHTML={{ __html: data.contentfulFooter.content.content }}></div>
+    </footer>
+    )} />
 );
