@@ -10,8 +10,12 @@ header, nav, h1, h2, h3, h4, h5, h6{
     text-transform: capitalize;
 }
 
-h1.title{
+h1.title, .button{
     text-transform: capitalize;
+}
+
+.section:last-child{
+    padding-bottom: 0;
 }
 
 ::-webkit-scrollbar {

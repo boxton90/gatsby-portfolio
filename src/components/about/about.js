@@ -1,5 +1,7 @@
 import React from 'react'
-import { StaticQuery, graphql } from "gatsby"
+import Button from '../../components/button/button'
+import Emoji from '../../components/emoji/emoji'
+import { StaticQuery, graphql } from 'gatsby'
 
 export default () => (
   <StaticQuery
@@ -7,6 +9,7 @@ export default () => (
     query AboutQuery {
       contentfulAbout {
         title
+        cta
         desc {
           internal {
             content
@@ -28,6 +31,9 @@ export default () => (
             <img className="is-rounded" src={data.contentfulAbout.avatar.file.url} alt="avatar"></img>
           </figure>
           <p>{data.contentfulAbout.desc.internal.content}</p>
+          <div className="section">
+            <Button href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.cta} <Emoji emoji="👨🏻‍🎓"/></Button>
+          </div>
         </div>
       </section>
     )}

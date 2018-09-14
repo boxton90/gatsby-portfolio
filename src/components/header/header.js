@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../../components/button/button'
 import Emoji from '../../components/emoji/emoji'
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from 'gatsby'
 
 class Header extends Component {
 
@@ -33,7 +33,7 @@ class Header extends Component {
                 <h2 className="subtitle">{data.contentfulHeader.greetings}</h2>
                 <h1 className="title is-1">{data.contentfulHeader.name}</h1>
                 <h2 className="subtitle is-2">{data.contentfulHeader.role}</h2>
-                <Button type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji emoji="👋"/></Button>
+                <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji emoji="👋"/></Button>
               </div>
             </div>
             <div className="header-bg"></div>
