@@ -1,11 +1,12 @@
 import React from 'react'
 import './card.scss'
+import Img from 'gatsby-image'
 
 export default (props) => (
     <div className="card">
         <div className="card-image">
-            <figure className="image is-16by9">
-                <img src={props.contentData.image.file.url} alt="project"></img>
+            <figure className="image">
+                <Img fluid={props.contentData.image.sizes} alt="project"/>
             </figure>
         </div>
         <div className="card-content">

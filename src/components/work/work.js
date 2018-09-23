@@ -28,8 +28,15 @@ class Work extends Component {
               }
               tags
               image {
-                file {
-                  url
+                sizes {
+                  base64
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
                 }
               }
             }

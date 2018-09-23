@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../../components/button/button'
 import Emoji from '../../components/emoji/emoji'
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export default () => (
   <StaticQuery
@@ -16,8 +17,15 @@ export default () => (
           }
         }
         avatar{
-          file{
-            url
+          sizes {
+            base64
+            tracedSVG
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
           }
         }
       }
@@ -28,7 +36,7 @@ export default () => (
         <div data-aos="fade-up" className="container">
           <h1 data-aos="zoom-in" className="title">{data.contentfulAbout.title}</h1>
           <figure className="image avatar is-128x128">
-            <img className="is-rounded" src={data.contentfulAbout.avatar.file.url} alt="avatar"></img>
+            <Img fluid={data.contentfulAbout.avatar.sizes} className="is-rounded" alt="avatar"/>
           </figure>
           <p>{data.contentfulAbout.desc.internal.content}</p>
           <div className="section">

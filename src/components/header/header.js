@@ -44,8 +44,8 @@ class Header extends Component {
                 <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji emoji="👋"/></Button>
               </div>
             </div>
-            <Img fluid={data.headerImg.childImageSharp.fluid} className="header-bg" style={{position: "absolute"}}/>
-            <FontAwesomeIcon className="scrollDownIcon" icon="angle-double-down" size="2x" data-view="#skills" onClick={this.doScrollIntoView} />
+            <Img fluid={data.headerImg.childImageSharp.fluid} className="header-bg" alt="header image" style={{position: "absolute"}}/>
+            <FontAwesomeIcon className="scroll-down-icon" icon="angle-double-down" size="2x" data-view="#skills" onClick={this.doScrollIntoView} />
           </section>
         </header>
       )} />
