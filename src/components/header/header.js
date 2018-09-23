@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../../components/button/button'
 import Emoji from '../../components/emoji/emoji'
 import { StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 class Header extends Component {
 
@@ -24,6 +25,13 @@ class Header extends Component {
           role
           cta
         }
+        headerImg: file(relativePath: {eq: "header-bg.jpg"}) {
+          childImageSharp {
+            fluid{
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `} render={data => (
         <header>
@@ -36,7 +44,7 @@ class Header extends Component {
                 <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji emoji="👋"/></Button>
               </div>
             </div>
-            <div className="header-bg"></div>
+            <Img fluid={data.headerImg.childImageSharp.fluid} className="header-bg" style={{position: "absolute"}}/>
             <FontAwesomeIcon className="scrollDownIcon" icon="angle-double-down" size="2x" data-view="#skills" onClick={this.doScrollIntoView} />
           </section>
         </header>

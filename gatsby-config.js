@@ -2,6 +2,7 @@ const dotenv = require('dotenv').config({
   path: `.env`,
 });
 
+
 module.exports = {
     plugins: [{
       resolve: `gatsby-source-contentful`,
@@ -10,5 +11,14 @@ module.exports = {
         accessToken: dotenv.parsed.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    'gatsby-plugin-sass'],
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`
+      }
+    },
+    'gatsby-plugin-sass',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`],
   }
