@@ -7,6 +7,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 // AOS
 import AOS from 'aos'
+// SEO
+import Helmet from "./helmet/helmet";
 // Components
 import Navigation from './navigation/navigation'
 import Header from './header/header'
@@ -42,6 +44,7 @@ class Layout extends Component {
   render() {
     return (
       <div>
+        <Helmet></Helmet>
         <Navigation></Navigation>
         <Header></Header>
         <Skills></Skills>

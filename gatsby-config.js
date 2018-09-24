@@ -4,21 +4,24 @@ const dotenv = require('dotenv').config({
 
 
 module.exports = {
-    plugins: [{
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: dotenv.parsed.CONTENTFUL_SPACE_ID,
-        accessToken: dotenv.parsed.CONTENTFUL_ACCESS_TOKEN,
-      },
+  siteMetadata: {
+    title: `Daniel Fernandez Rabal | Front-End Developer`,
+  },
+  plugins: [{
+    resolve: `gatsby-source-contentful`,
+    options: {
+      spaceId: dotenv.parsed.CONTENTFUL_SPACE_ID,
+      accessToken: dotenv.parsed.CONTENTFUL_ACCESS_TOKEN,
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets/`
-      }
-    },
-    'gatsby-plugin-sass',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`],
-  }
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `assets`,
+      path: `${__dirname}/src/assets/`
+    }
+  },
+  'gatsby-plugin-sass',
+  `gatsby-transformer-sharp`,
+  `gatsby-plugin-sharp`],
+}

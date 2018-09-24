@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
 
+html{
+    &.has-navbar-fixed-top{
+        padding-top: 0;
+    }
+}
+
 body{
     font-family: 'Open Sans', sans-serif;
 }

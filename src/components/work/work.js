@@ -48,11 +48,11 @@ class Work extends Component {
             <div className="container">
               <h1 data-aos="zoom-out" className="title">{data.contentfulWork.title}</h1>
               <div className="columns">
-                <div data-aos="fade-up" className="column is-one-third">
+                <div data-aos="fade-up" className="column">
                   <p>{data.contentfulWork.desc.internal.content}</p>
                 </div>
                 {data.allContentfulProject.edges.map((project, key) => {
-                  return (<div key={key} data-aos="zoom-in-left" className="column is-one-third"><Card contentData={project.node}></Card></div>);
+                  return (<div key={key} data-aos="zoom-in-left" className="column"><Card contentData={project.node}></Card></div>);
                 })}
               </div>
             </div>
