@@ -8,7 +8,6 @@ class Navigation extends Component {
     constructor(props) {
         super(props);
         this.transparencyBreakpoint = 400;
-        this.navItemsList = ['skills', 'work', 'about', 'contact'];
         this.state = {
             isNavTransparent: true,
             isMenuActive: false,

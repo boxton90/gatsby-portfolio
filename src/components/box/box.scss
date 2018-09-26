@@ -1,5 +1,7 @@
+@import "../variables.scss";
+
 .box{
-    box-shadow: 4px 4px 30px #c3c3c3;
+    box-shadow: $light-bg-shadow-down;
     .content h2:not(:first-child) {
         margin-top: 1rem;
     }
