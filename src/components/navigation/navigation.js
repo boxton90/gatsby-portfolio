@@ -64,15 +64,23 @@ class Navigation extends Component {
         return (
             <StaticQuery query={graphql`
             query NavigationQuery {
-              contentfulNavigation{
-                logo
-                items
+                contentfulNavigation {
+                  title
+                  items
+                  favicon{
+                    file{
+                      url
+                    }
+                  }
+                }
               }
-            }
           `} render={data => (
                     <nav className={`navbar ${(this.state.isNavTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                         <div className="navbar-brand">
-                            <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>{data.contentfulNavigation.logo}</a>
+                            {/* <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>{data.contentfulNavigation.logo}</a> */}
+                            <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>
+                                <img src={data.contentfulNavigation.favicon.file.url} alt="favicon" width="30" height="30"></img><b>{data.contentfulNavigation.title}</b>
+                            </a>
                             <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
                                 <span></span>
                                 <span></span>
@@ -86,7 +94,7 @@ class Navigation extends Component {
                                     return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
                                 })}
                                 <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                                    <Button href="mailto:boxton.da@gmail.com" type="primary">Say Hello <Emoji emoji="👋"/></Button>
+                                    <Button href="mailto:boxton.da@gmail.com" type="primary">Say Hello <Emoji emoji="👋" /></Button>
                                 </div>
                             </div>
                         </div>

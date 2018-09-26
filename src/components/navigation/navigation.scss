@@ -4,7 +4,6 @@ nav {
         background-color: transparent;
     }
     .logo{
-        border-bottom: 1px solid;
         padding: 0;
         margin: .5rem;
     }
@@ -15,7 +14,7 @@ nav {
         &:hover{
             border-bottom: 1px solid;
         }
-        & a:hover, &.cta:hover{
+        & a:hover, &.cta:hover, &.logo:hover{
             border-bottom: none;
         }
     }
