@@ -60,6 +60,11 @@ class Navigation extends Component {
         });
     }
 
+    onClickLink = (e) => {
+        this.doScrollIntoView(e);
+        this.toggleMenu();
+    }
+
     render() {
         return (
             <StaticQuery query={graphql`
@@ -77,8 +82,7 @@ class Navigation extends Component {
           `} render={data => (
                     <nav className={`navbar ${(this.state.isNavTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                         <div className="navbar-brand">
-                            {/* <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>{data.contentfulNavigation.logo}</a> */}
-                            <a data-view="#home" href="#home" className="navbar-item logo" onClick={this.doScrollIntoView}>
+                            <a data-view="#home" href="#none" className="navbar-item logo" onClick={this.doScrollIntoView}>
                                 <img src={data.contentfulNavigation.favicon.file.url} alt="favicon" width="30" height="30"></img><b>{data.contentfulNavigation.title}</b>
                             </a>
                             <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
@@ -91,7 +95,7 @@ class Navigation extends Component {
                         <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
                             <div className="navbar-end">
                                 {data.contentfulNavigation.items.map((item, index) => {
-                                    return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#' + item} className="navbar-item" onClick={this.doScrollIntoView}>{item}</a></div>
+                                    return <div className="navbar-item" key={index}><a data-view={'#' + item} href={'#none'} className="navbar-item" onClick={this.onClickLink}>{item}</a></div>
                                 })}
                                 <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
                                     <Button href="mailto:boxton.da@gmail.com" type="primary">Say Hello <Emoji emoji="👋" /></Button>
