@@ -7,7 +7,6 @@ class Navigation extends Component {
 
     constructor(props) {
         super(props);
-        this.transparencyBreakpoint = window.innerHeight / 2;
         this.state = {
             isNavTransparent: true,
             isMenuActive: false,
@@ -16,6 +15,7 @@ class Navigation extends Component {
     }
 
     componentDidMount() {
+        this.transparencyBreakpoint = window.innerHeight / 2;
         window.addEventListener('scroll', this.handleScroll);
     }
 
