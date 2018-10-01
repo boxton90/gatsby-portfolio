@@ -79,7 +79,6 @@ class Navigation extends Component {
 
     onClickLogo = (e) => {
         this.doScrollIntoView(e);
-        //this.toggleMenu();
         this.handleScroll();
     }
 
