@@ -7,7 +7,7 @@ class Navigation extends Component {
 
     constructor(props) {
         super(props);
-        this.transparencyBreakpoint = 400;
+        this.transparencyBreakpoint = window.innerHeight / 2;
         this.state = {
             isNavTransparent: true,
             isMenuActive: false,
@@ -38,6 +38,18 @@ class Navigation extends Component {
                 });
             }
         }
+        else{
+            if (window.scrollY < this.transparencyBreakpoint) {
+                this.setState({
+                    isCTAVisible: false
+                });
+            }
+            else {
+                this.setState({
+                    isCTAVisible: true
+                });
+            }    
+        }
     }
 
     toggleMenu = () => {
@@ -62,6 +74,13 @@ class Navigation extends Component {
     onClickLink = (e) => {
         this.doScrollIntoView(e);
         this.toggleMenu();
+        this.handleScroll();
+    }
+
+    onClickLogo = (e) => {
+        this.doScrollIntoView(e);
+        //this.toggleMenu();
+        this.handleScroll();
     }
 
     render() {
@@ -81,7 +100,7 @@ class Navigation extends Component {
           `} render={data => (
                     <nav className={`navbar ${(this.state.isNavTransparent) ? "is-transparent" : ''} is-fixed-top`}>
                         <div className="navbar-brand">
-                            <a data-view="#home" href="#none" className="navbar-item logo" onClick={this.doScrollIntoView}>
+                            <a data-view="#home" href="#none" className="navbar-item logo" onClick={this.onClickLogo}>
                                 <img src={data.contentfulNavigation.favicon.file.url} alt="favicon" width="30" height="30"></img><b>{data.contentfulNavigation.title}</b>
                             </a>
                             <div className={`navbar-burger burger ${(this.state.isMenuActive) ? "is-active" : ''}`} onClick={this.toggleMenu}>
