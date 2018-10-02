@@ -45,7 +45,7 @@ class Work extends Component {
       }
       `} render={data => (
           <section id="work" className="section">
-            <div className="container">
+            <div className="container is-fullhd">
               <h1 data-aos="zoom-out" className="title">{data.contentfulWork.title}</h1>
               <div className="columns">
                 <div data-aos="fade-up" className="column">
