@@ -5,7 +5,9 @@ const dotenv = require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Daniel Fernandez Rabal | Front-End Developer`,
+    title: 'Front-End Developer | Daniel Fernandez Rabal',
+    description: 'Front-End Developer | Daniel Fernandez Rabal',
+    keywords: `Daniel Fernandez Rabal, Daniel, Fernandez, Rabal, Web developer, Web, Developer, CSS, HTML, JS, Javascript, Front End Developer, CSS3, HTML5`
   },
   plugins: [{
     resolve: `gatsby-source-contentful`,
