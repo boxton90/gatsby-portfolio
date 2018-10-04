@@ -1,8 +1,8 @@
 import React from 'react'
-import Button from '../components/button/button'
 import { Link } from 'gatsby'
 import Emoji from '../components/emoji/emoji'
 import { StaticQuery, graphql } from 'gatsby'
+import './404.scss'
 
 export default () => (
     <StaticQuery
