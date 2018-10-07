@@ -27,6 +27,9 @@ class Work extends Component {
                 }
               }
               tags
+              link{
+                link
+              }
               image {
                 sizes {
                   base64
