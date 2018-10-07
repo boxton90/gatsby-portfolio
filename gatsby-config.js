@@ -23,6 +23,16 @@ module.exports = {
       path: `${__dirname}/src/assets/`
     }
   },
+  {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: dotenv.parsed.GA_TRACKING_ID,
+      // Puts tracking script in the head instead of the body
+      head: false,
+      // Setting this parameter is optional
+      anonymize: true,
+    },
+  },
   'gatsby-plugin-sass',
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`],
