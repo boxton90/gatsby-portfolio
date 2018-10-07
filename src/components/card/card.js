@@ -1,9 +1,10 @@
 import React from 'react'
 import './card.scss'
 import Img from 'gatsby-image'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 export default (props) => (
-    <a href={props.contentData.link.link} target="_blank" rel="noopener noreferrer">
+    <OutboundLink href={props.contentData.link.link} target="_blank" rel="noopener noreferrer">
         <div className="card">
             <div className="card-image">
                 <figure className="image">
@@ -22,5 +23,5 @@ export default (props) => (
                 </div>
             </div>
         </div>
-    </a>
+    </OutboundLink>
 );
