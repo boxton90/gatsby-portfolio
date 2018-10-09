@@ -49,9 +49,9 @@ class Work extends Component {
       `} render={data => (
           <section id="work" className="section">
             <div className="container is-fullhd">
-              <h1 data-aos="zoom-out" className="title">{data.contentfulWork.title}</h1>
               <div className="columns">
                 <div data-aos="fade-up" className="column">
+                  <h1 data-aos="zoom-out" className="title">{data.contentfulWork.title}</h1>
                   <p>{data.contentfulWork.desc.internal.content}</p>
                 </div>
                 {data.allContentfulProject.edges.map((project, key) => {

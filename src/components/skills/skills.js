@@ -52,9 +52,9 @@ class Skills extends Component {
     `} render={data => (
           <section id="skills" className="section">
             <div className="container">
-              <h1 data-aos="zoom-out" className="title">{data.contentfulSkills.title}</h1>
               <div className="columns">
                 <div data-aos="fade-up" className="column">
+                  <h1 data-aos="zoom-out" className="title">{data.contentfulSkills.title}</h1>
                   <p>{data.contentfulSkills.desc.internal.content}</p>
                 </div>
                 {data.allContentfulSkill.edges.map((skill, index) => {
