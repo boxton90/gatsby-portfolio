@@ -40,7 +40,7 @@ module.exports = {
       short_name: `DFR Portfolio`,
       start_url: `/`,
       background_color: `#ffffff`,
-      theme_color: `#00d1b2`,
+      theme_color: `#ffffff`,
       display: `standalone`,
       icon: `src/assets/icon.png`, // This path is relative to the root of the site.
       orientation: `portrait`
