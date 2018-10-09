@@ -20,6 +20,8 @@
     "gatsby-image": "^2.0.6",
     "gatsby-link": "next",
     "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-manifest": "^2.0.4",
+    "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sharp": "^2.0.5",

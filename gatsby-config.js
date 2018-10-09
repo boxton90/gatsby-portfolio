@@ -33,6 +33,20 @@ module.exports = {
       anonymize: true,
     },
   },
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `DFR Portfolio`,
+      short_name: `DFR Portfolio`,
+      start_url: `/`,
+      background_color: `#ffffff`,
+      theme_color: `#00d1b2`,
+      display: `standalone`,
+      icon: `src/assets/icon.png`, // This path is relative to the root of the site.
+      orientation: `portrait`
+    },
+  },
+  `gatsby-plugin-offline`, // Should be included after gatsby-plugin-manifest
   'gatsby-plugin-sass',
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`],

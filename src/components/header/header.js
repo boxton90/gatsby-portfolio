@@ -25,7 +25,7 @@ class Header extends Component {
           role
           cta
         }
-        headerImg: file(relativePath: {eq: "header-bg.jpg"}) {
+        headerImg: file(relativePath: {eq: "header-background.jpg"}) {
           childImageSharp {
             fluid{
               ...GatsbyImageSharpFluid
