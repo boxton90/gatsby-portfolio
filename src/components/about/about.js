@@ -18,14 +18,7 @@ export default () => (
         }
         avatar{
           sizes {
-            base64
-            tracedSVG
-            aspectRatio
-            src
-            srcSet
-            srcWebp
-            srcSetWebp
-            sizes
+            ...GatsbyContentfulSizes
           }
         }
       }

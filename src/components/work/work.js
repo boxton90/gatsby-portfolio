@@ -32,14 +32,7 @@ class Work extends Component {
               }
               image {
                 sizes {
-                  base64
-                  tracedSVG
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
+                  ...GatsbyContentfulSizes
                 }
               }
             }

@@ -27,7 +27,7 @@ class Header extends Component {
         }
         headerImg: file(relativePath: {eq: "header-background.jpg"}) {
           childImageSharp {
-            fluid{
+            fluid(quality: 90){
               ...GatsbyImageSharpFluid
             }
           }
