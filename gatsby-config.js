@@ -36,8 +36,8 @@ module.exports = {
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: `DFR Portfolio`,
-      short_name: `DFR Portfolio`,
+      name: `DFR`,
+      short_name: `DFR`,
       start_url: `/`,
       background_color: `#ffffff`,
       theme_color: `#ffffff`,
