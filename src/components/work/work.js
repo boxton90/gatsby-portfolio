@@ -17,7 +17,7 @@ class Work extends Component {
             }
           }
         }
-        allContentfulProject {
+        allContentfulProject (sort: {fields: [date], order: DESC}) {
           edges {
             node {
               title
