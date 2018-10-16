@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../../components/button/button'
 import Emoji from '../../components/emoji/emoji'
+import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -27,7 +28,7 @@ export default () => (
     render={data => (
       <section id="about" className="section has-text-centered">
         <div data-aos="fade-up" className="container">
-          <h1 data-aos="zoom-in" className="title">{data.contentfulAbout.title}</h1>
+          <HighlightedTitle color="purple">{data.contentfulAbout.title}</HighlightedTitle>
           <figure className="image avatar is-128x128">
             <Img fluid={data.contentfulAbout.avatar.sizes} className="is-rounded" alt="avatar"/>
           </figure>

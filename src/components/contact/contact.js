@@ -1,5 +1,6 @@
 import React from 'react'
 import SocialButton from '../../components/socialButton/socialButton';
+import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from 'gatsby'
 
 export default () => (
@@ -18,7 +19,7 @@ export default () => (
   `} render={data => (
       <section id="contact" className="section has-text-centered">
         <div data-aos="fade-up" className="container">
-          <h1 data-aos="zoom-in" className="title">{data.contentfulContact.title}</h1>
+          <HighlightedTitle color="yellow">{data.contentfulContact.title}</HighlightedTitle>
           <div className="buttons is-centered">
             {data.contentfulContact.socialButton.map(((button, index) => {
               return (

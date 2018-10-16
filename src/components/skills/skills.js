@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Box from '../../components/box/box'
+import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from "gatsby"
 
 class Skills extends Component {
@@ -54,7 +55,7 @@ class Skills extends Component {
             <div className="container">
               <div className="columns">
                 <div data-aos="fade-up" className="column">
-                  <h1 data-aos="zoom-out" className="title">{data.contentfulSkills.title}</h1>
+                  <HighlightedTitle color="turquoise">{data.contentfulSkills.title}</HighlightedTitle>
                   <p>{data.contentfulSkills.desc.internal.content}</p>
                 </div>
                 {data.allContentfulSkill.edges.map((skill, index) => {

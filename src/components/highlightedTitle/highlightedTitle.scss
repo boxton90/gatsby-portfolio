@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+.title{
+    .shadow{
+        &.is-turquoise{
+            -webkit-box-shadow: inset 0 -6px 0 $light-turquoise-color;
+            box-shadow: inset 0 -6px 0 $light-turquoise-color;
+        }
+        &.is-purple {
+            -webkit-box-shadow: inset 0 -6px 0 $light-purple-color;
+            box-shadow: inset 0 -6px 0 $light-purple-color;
+        }
+        &.is-yellow {
+            -webkit-box-shadow: inset 0 -6px 0 $light-yellow-color;
+            box-shadow: inset 0 -6px 0 $light-yellow-color;
+        }
+        &.is-red {
+            -webkit-box-shadow: inset 0 -6px 0 $light-red-color;
+            box-shadow: inset 0 -6px 0 $light-red-color;
+        }
+    }
+}

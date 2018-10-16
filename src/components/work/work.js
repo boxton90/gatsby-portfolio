@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from '../../components/card/card'
+import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from "gatsby"
 
 
@@ -44,7 +45,7 @@ class Work extends Component {
             <div className="container is-fullhd">
               <div className="columns">
                 <div data-aos="fade-up" className="column">
-                  <h1 data-aos="zoom-out" className="title">{data.contentfulWork.title}</h1>
+                  <HighlightedTitle color="red">{data.contentfulWork.title}</HighlightedTitle>
                   <p>{data.contentfulWork.desc.internal.content}</p>
                 </div>
                 {data.allContentfulProject.edges.map((project, key) => {
