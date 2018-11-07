@@ -23,7 +23,10 @@ class Header extends Component {
           greetings
           name
           role
-          cta
+          button{
+            content
+            emoji
+          }
         }
         headerImg: file(relativePath: {eq: "header-background.jpg"}) {
           childImageSharp {
@@ -41,7 +44,7 @@ class Header extends Component {
                 <h2 className="subtitle">{data.contentfulHeader.greetings}</h2>
                 <h1 className="title is-1">{data.contentfulHeader.name}</h1>
                 <h2 className="subtitle is-2">{data.contentfulHeader.role}</h2>
-                <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.cta} <Emoji emoji="👋"/></Button>
+                <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.button.content} <Emoji emoji={data.contentfulHeader.button.emoji}/></Button>
               </div>
             </div>
             <Img fluid={data.headerImg.childImageSharp.fluid} className="header-bg" alt="header image" style={{position: "absolute"}}/>

@@ -89,6 +89,10 @@ class Navigation extends Component {
                 contentfulNavigation {
                   title
                   items
+                  button{
+                    content
+                    emoji
+                  }
                   favicon{
                     file{
                       url
@@ -115,7 +119,7 @@ class Navigation extends Component {
                                     return <div className="navbar-item" key={index}><a data-view={'#' + item} className="navbar-item" onClick={this.onClickLink}>{item}</a></div>
                                 })}
                                 <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                                    <Button href="mailto:boxton.da@gmail.com" type="primary">Say Hello <Emoji emoji="👋" /></Button>
+                                    <Button href="mailto:boxton.da@gmail.com" type="primary">{data.contentfulNavigation.button.content} <Emoji emoji={data.contentfulNavigation.button.emoji}/></Button>
                                 </div>
                             </div>
                         </div>
