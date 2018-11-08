@@ -22,7 +22,7 @@ export default () => (
       }
     `}
     render={data => (
-      <section data-aos="fade-up" data-aos-anchor-placement="bottom-center" className={`section has-text-centered is-section-up ${data.contentfulAnnouncement.show ? null : 'is-hidden'}`}>
+      <section data-aos="fade-up" className={`section has-text-centered is-section-up ${data.contentfulAnnouncement.show ? null : 'is-hidden'}`}>
         <div className="container is-narrow">
           <div className="box">
             <div className="columns level">
