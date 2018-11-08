@@ -12,6 +12,7 @@ import Helmet from "./helmet/helmet";
 // Components
 import Navigation from './navigation/navigation'
 import Header from './header/header'
+import Announcement from './announcement/announcement'
 import Skills from './skills/skills'
 import Work from './work/work'
 import About from './about/about'
@@ -47,6 +48,7 @@ class Layout extends Component {
         <Helmet></Helmet>
         <Navigation></Navigation>
         <Header></Header>
+        <Announcement></Announcement>
         <Skills></Skills>
         <Work></Work>
         <About></About>

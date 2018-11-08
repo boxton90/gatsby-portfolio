@@ -12,6 +12,10 @@ export default () => (
       contentfulAbout {
         title
         cta
+        button{
+          content
+          emoji
+        }
         desc {
           internal {
             content
@@ -34,7 +38,7 @@ export default () => (
           </figure>
           <p>{data.contentfulAbout.desc.internal.content}</p>
           <div className="section">
-            <Button href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.cta} <Emoji emoji="👨🏻‍🎓"/></Button>
+            <Button href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.button.content} <Emoji emoji={data.contentfulAbout.button.emoji}/></Button>
           </div>
         </div>
       </section>
