@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Card from '../../components/card/card'
 import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from "gatsby"
-
+import { Link } from 'gatsby'
 
 class Work extends Component {
 
@@ -16,6 +16,9 @@ class Work extends Component {
             internal {
               content
             }
+          }
+          button{
+            content
           }
         }
         allContentfulProject (sort: {fields: [date], order: DESC}) {
@@ -46,7 +49,8 @@ class Work extends Component {
               <div className="columns">
                 <div data-aos="fade-up" className="column">
                   <HighlightedTitle color="red">{data.contentfulWork.title}</HighlightedTitle>
-                  <p>{data.contentfulWork.desc.internal.content}</p>
+                  <p className="content">{data.contentfulWork.desc.internal.content}</p>
+                  <Link to="/projects" className="button is-medium is-outlined is-uppercase">{data.contentfulWork.button.content}</Link>
                 </div>
                 {data.allContentfulProject.edges.map((project, key) => {
                   return (<div key={key} data-aos="zoom-in-left" className="column"><Card contentData={project.node}></Card></div>);

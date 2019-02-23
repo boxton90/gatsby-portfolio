@@ -31,14 +31,9 @@ class Projects extends Component {
   render() {
     return (
       <StaticQuery query={graphql`
-      query ProjectsQuery {
-        contentfulWork {
+      query ProjectsPageQuery {
+        contentfulProjectsPage {
           title
-          desc {
-            internal {
-              content
-            }
-          }
         }
         allContentfulProject (sort: {fields: [date], order: DESC}) {
           edges {
@@ -69,7 +64,7 @@ class Projects extends Component {
                 <div className="level is-mobile">
                   <div className="level-item level-left">
                     <Link to="/" className="material-icons arrow-back">arrow_back</Link>
-                    <HighlightedTitle color="purple">Projects</HighlightedTitle>
+                    <HighlightedTitle color="purple">{data.contentfulProjectsPage.title}</HighlightedTitle>
                   </div>
                 </div>
               </div>

@@ -7,4 +7,7 @@
         box-shadow: $light-bg-shadow-up;
         transform: translateY(-3px);
     }
+    &.is-uppercase{
+        text-transform: uppercase
+    }
 }
