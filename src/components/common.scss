@@ -42,6 +42,12 @@ h1.title, .button{
     display: none;
 }
 
+.material-icons{
+    &.arrow-back{
+        margin-right: 0.5rem;
+    }
+}
+
 @keyframes floating {
     0%,100% {
         transform: translateY(0px)

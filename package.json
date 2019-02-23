@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-sharp": "^2.1.4",
     "lodash": "^4.17.11",
+    "material-design-icons": "^3.0.1",
     "node-sass": "^4.9.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
