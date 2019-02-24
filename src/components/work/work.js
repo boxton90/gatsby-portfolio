@@ -21,7 +21,7 @@ class Work extends Component {
             content
           }
         }
-        allContentfulProject (sort: {fields: [date], order: DESC}) {
+        allContentfulProject (sort: {fields: [date], order: DESC}, limit:3) {
           edges {
             node {
               title
