@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import './socialButton.scss'
+import './button.scss'
 
 export default (props) => (
     <OutboundLink href={props.href} target="_blank" rel="noopener noreferrer" className={`button is-social ${(props.fabIcon)}`}>

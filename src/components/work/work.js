@@ -50,7 +50,7 @@ class Work extends Component {
                 <div data-aos="fade-up" className="column">
                   <HighlightedTitle color="red">{data.contentfulWork.title}</HighlightedTitle>
                   <p className="content">{data.contentfulWork.desc.internal.content}</p>
-                  <Link to="/projects" className="button is-medium is-outlined is-uppercase">{data.contentfulWork.button.content}</Link>
+                  <Link to="/projects" className="button is-medium is-primary is-outlined is-uppercase">{data.contentfulWork.button.content}</Link>
                 </div>
                 {data.allContentfulProject.edges.map((project, key) => {
                   return (<div key={key} data-aos="zoom-in-left" className="column"><Card contentData={project.node}></Card></div>);

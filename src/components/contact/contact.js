@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialButton from '../../components/socialButton/socialButton';
+import SocialButton from '../../components/buttons/socialButton';
 import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from 'gatsby'
 

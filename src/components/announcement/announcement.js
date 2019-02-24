@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/button/button";
+import Button from "../../components/buttons/button";
 import Emoji from "../../components/emoji/emoji";
 import HighlightedTitle from "../../components/highlightedTitle/highlightedTitle";
 import { StaticQuery, graphql } from "gatsby";
@@ -27,14 +27,14 @@ export default () => (
           <div className="box">
             <div className="columns level">
               <div className="column level-item">
-              <HighlightedTitle color="red">{data.contentfulAnnouncement.title}</HighlightedTitle>
-              <p>{data.contentfulAnnouncement.show.toString}</p>
+                <HighlightedTitle color="red">{data.contentfulAnnouncement.title}</HighlightedTitle>
+                <p>{data.contentfulAnnouncement.show.toString}</p>
               </div>
               <div className="column level-item">
                 <p>{data.contentfulAnnouncement.desc.desc}</p>
               </div>
               <div className="column level-item">
-                <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulAnnouncement.button.content} <Emoji emoji={data.contentfulAnnouncement.button.emoji}/></Button>
+                <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulAnnouncement.button.content} <Emoji emoji={data.contentfulAnnouncement.button.emoji} /></Button>
               </div>
             </div>
           </div>
