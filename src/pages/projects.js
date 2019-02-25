@@ -1,4 +1,4 @@
-import React, { Component } from 'React'
+import React, { Component } from 'react'
 import Card from '../components/card/card'
 import HighlightedTitle from '../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from 'gatsby'
