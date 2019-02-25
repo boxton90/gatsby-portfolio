@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from '../../components/card/card'
+import LinkButton from '../../components/buttons/linkButton'
 import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from "gatsby"
 import { Link } from 'gatsby'
@@ -50,7 +51,9 @@ class Work extends Component {
                 <div data-aos="fade-up" className="column">
                   <HighlightedTitle color="red">{data.contentfulWork.title}</HighlightedTitle>
                   <p className="content">{data.contentfulWork.desc.internal.content}</p>
-                  <Link to="/projects" className="button is-medium is-primary is-outlined is-uppercase">{data.contentfulWork.button.content}</Link>
+                  <LinkButton to="/projects" type="primary" size="medium" border="outlined">
+                    {data.contentfulWork.button.content}
+                  </LinkButton>
                 </div>
                 {data.allContentfulProject.edges.map((project, key) => {
                   return (<div key={key} data-aos="zoom-in-left" className="column"><Card contentData={project.node}></Card></div>);

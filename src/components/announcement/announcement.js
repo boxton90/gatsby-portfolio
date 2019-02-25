@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../../components/buttons/button";
+import OutboundButton from "../../components/buttons/outboundButton";
 import Emoji from "../../components/emoji/emoji";
 import HighlightedTitle from "../../components/highlightedTitle/highlightedTitle";
 import { StaticQuery, graphql } from "gatsby";
@@ -34,7 +34,7 @@ export default () => (
                 <p>{data.contentfulAnnouncement.desc.desc}</p>
               </div>
               <div className="column level-item">
-                <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulAnnouncement.button.content} <Emoji emoji={data.contentfulAnnouncement.button.emoji} /></Button>
+                <OutboundButton href="mailto:boxton.da@gmail.com" type="primary" size="medium" border="outlined">{data.contentfulAnnouncement.button.content} <Emoji emoji={data.contentfulAnnouncement.button.emoji} /></OutboundButton>
               </div>
             </div>
           </div>

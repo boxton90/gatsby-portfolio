@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../components/buttons/button'
+import OutboundButton from '../buttons/outboundButton'
 import Emoji from '../../components/emoji/emoji'
 import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from 'gatsby'
@@ -38,7 +38,7 @@ export default () => (
           </figure>
           <p>{data.contentfulAbout.desc.internal.content}</p>
           <div className="section">
-            <Button href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.button.content} <Emoji emoji={data.contentfulAbout.button.emoji} /></Button>
+            <OutboundButton href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.button.content} <Emoji emoji={data.contentfulAbout.button.emoji} /></OutboundButton>
           </div>
         </div>
       </section>

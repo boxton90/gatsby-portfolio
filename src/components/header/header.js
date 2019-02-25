@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Button from '../../components/buttons/button'
+import OutboundButton from '../../components/buttons/outboundButton'
 import Emoji from '../../components/emoji/emoji'
 import { StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -44,7 +44,7 @@ class Header extends Component {
                   <h2 className="subtitle">{data.contentfulHeader.greetings}</h2>
                   <h1 className="title is-1">{data.contentfulHeader.name}</h1>
                   <h2 className="subtitle is-2">{data.contentfulHeader.role}</h2>
-                  <Button href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.button.content} <Emoji emoji={data.contentfulHeader.button.emoji} /></Button>
+                  <OutboundButton href="mailto:boxton.da@gmail.com" type="primary" shape="rounded" size="medium">{data.contentfulHeader.button.content} <Emoji emoji={data.contentfulHeader.button.emoji} /></OutboundButton>
                 </div>
               </div>
               <Img fluid={data.headerImg.childImageSharp.fluid} className="header-bg" alt="header image" style={{ position: "absolute" }} />
