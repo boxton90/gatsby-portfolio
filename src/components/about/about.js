@@ -36,10 +36,8 @@ export default () => (
           <figure className="image avatar is-128x128">
             <Img fluid={data.contentfulAbout.avatar.sizes} className="is-rounded" alt="avatar" />
           </figure>
-          <p>{data.contentfulAbout.desc.internal.content}</p>
-          <div className="section">
-            <OutboundButton href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.button.content} <Emoji emoji={data.contentfulAbout.button.emoji} /></OutboundButton>
-          </div>
+          <p className="content">{data.contentfulAbout.desc.internal.content}</p>
+          <OutboundButton href="https://www.visualcv.com/daniel-fernandez-rabal" target="_blank" type="primary" shape="rounded" size="medium">{data.contentfulAbout.button.content} <Emoji emoji={data.contentfulAbout.button.emoji} /></OutboundButton>
         </div>
       </section>
     )}

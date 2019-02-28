@@ -22,9 +22,14 @@ export default () => (
         <section className="section has-text-centered">
           <div data-aos="fade-up" className="container">
             <HighlightedTitle color="turquoise">contact me</HighlightedTitle>
-            <ContactForm />
+            <div className="columns is-centered">
+              <div className="column is-half">
+                <ContactForm />
+              </div>
+            </div>
           </div>
         </section>
+        <h5 data-aos="fade-down" className="is-size-5 has-text-centered">Or</h5>
         <section className="section has-text-centered">
           <div data-aos="fade-up" className="container">
             <HighlightedTitle color="yellow">{data.contentfulContact.title}</HighlightedTitle>
