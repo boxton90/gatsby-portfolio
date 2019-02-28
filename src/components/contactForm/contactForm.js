@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import './contactForm.scss'
 
 const ContactForm = ({ isSubmitting }) => (
-    <Form className="form">
+    <Form id="form" className="form" action="https://formspree.io/boxton.da@gmail.com" method="POST">
         <div className="field-group">
             <div className="field-item">
                 <Field className="text-input" type="name" name="name" placeholder="Name" />
@@ -25,7 +25,7 @@ const ContactForm = ({ isSubmitting }) => (
                 </p>
             </div>
         </div>
-        <button className={isSubmitting ? 'button is-primary is-rounded is-medium is-loading' : 'button is-rounded is-primary is-medium'} type="submit">Submit</button>
+        <button type="submit" className={isSubmitting ? 'button is-primary is-rounded is-medium is-loading' : 'button is-rounded is-primary is-medium'}>Submit</button>
     </Form>
 )
 
@@ -43,12 +43,9 @@ const FormikForm = withFormik({
         message: yup.string().required('message is required')
     }),
     handleSubmit(values, { setSubmitting, resetForm }) {
-        setTimeout(() => {
-            setSubmitting(false)
-            console.log(values)
-            resetForm();
-        }, 2000)
-        // window.open(`mailto:boxton.da@gmail.com?subject=${values.subject}&body=${values.message}`);
+        document.getElementById('form').submit()
+        setSubmitting(false)
+        resetForm()
     }
 })(ContactForm)
 

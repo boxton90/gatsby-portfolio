@@ -1,14 +1,17 @@
+@import "../variables.scss";
+
 .form {
     .text-input{
         padding: 1rem;
         border: none;
-        background: #f0f0f5;
+        background: $light-grey-color;
         border-radius: 1rem;
         font-size: 1rem;
         outline: none;
     }
     .text-area {
         @extend .text-input;
+        height: 8rem;
         resize: none;
     }
     .field-item {
@@ -20,6 +23,6 @@
         margin: 1rem 0;
     }
     .error {
-        color: #ff3860;
+        color: $error-color;
     }
 }
