@@ -1,21 +1,22 @@
 import React from 'react'
 import { withFormik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
+import { config, emailjs } from '../../email/email'
 import './contactForm.scss'
 
 const ContactForm = ({ isSubmitting }) => (
-    <Form id="form" className="form" action="https://formspree.io/boxton.da@gmail.com" method="POST">
+    <Form className="form">
         <div className="field-group">
             <div className="field-item">
                 <Field className="text-input" type="name" name="name" placeholder="Name" />
                 <p className="error">
-                    <ErrorMessage className="error" name="name" />
+                    <ErrorMessage name="name" />
                 </p>
             </div>
             <div className="field-item">
                 <Field className="text-input" type="email" name="email" placeholder="Email" />
                 <p className="error">
-                    <ErrorMessage className="error" name="email" />
+                    <ErrorMessage name="email" />
                 </p>
             </div>
             <div className="field-item">
@@ -43,9 +44,20 @@ const FormikForm = withFormik({
         message: yup.string().required('message is required')
     }),
     handleSubmit(values, { setSubmitting, resetForm }) {
-        document.getElementById('form').submit()
-        setSubmitting(false)
-        resetForm()
+        const templateParams = {
+            name: values.name,
+            email: values.email,
+            message: values.message
+        }
+        emailjs.send(config.serviceID, config.templateID, templateParams, config.userID).then(() => {
+            setSubmitting(false)
+            resetForm()
+        }).catch((error) => {
+            console.log('FAILED SENDING CONTACT FORM', error);
+            setSubmitting(false)
+            resetForm()
+        });;
+
     }
 })(ContactForm)
 

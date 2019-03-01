@@ -1,7 +1,8 @@
-const dotenv = require('dotenv').config({
-  path: `.env`,
-});
+const activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
 
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -12,8 +13,8 @@ module.exports = {
   plugins: [{
     resolve: `gatsby-source-contentful`,
     options: {
-      spaceId: dotenv.parsed.CONTENTFUL_SPACE_ID,
-      accessToken: dotenv.parsed.CONTENTFUL_ACCESS_TOKEN,
+      spaceId: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     },
   },
   {
@@ -26,7 +27,7 @@ module.exports = {
   {
     resolve: `gatsby-plugin-google-analytics`,
     options: {
-      trackingId: dotenv.parsed.GA_TRACKING_ID,
+      trackingId: process.env.GA_TRACKING_ID,
       // Puts tracking script in the head instead of the body
       head: false,
       // Setting this parameter is optional
@@ -46,8 +47,8 @@ module.exports = {
       orientation: `portrait`
     },
   },
-  `gatsby-plugin-offline`, // Should be included after gatsby-plugin-manifest
-  'gatsby-plugin-sass',
-  `gatsby-transformer-sharp`,
-  `gatsby-plugin-sharp`],
+    `gatsby-plugin-offline`, // Should be included after gatsby-plugin-manifest
+    'gatsby-plugin-sass',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`],
 }
