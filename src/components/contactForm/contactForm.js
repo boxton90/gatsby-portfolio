@@ -4,26 +4,26 @@ import * as yup from 'yup'
 import { config, emailjs } from '../../email/email'
 import './contactForm.scss'
 
-const ContactForm = ({ isSubmitting }) => (
+const ContactForm = ({ isSubmitting, errors, touched }) => (
     <Form className="form">
         <div className="field-group">
             <div className="field-item">
-                <Field className="text-input" type="name" name="name" placeholder="Name" />
-                <p className="error">
+                <Field className={errors.name && touched.name ? "text-input error" : "text-input"} type="name" name="name" placeholder="Name" />
+                {errors.name && touched.name && <p className="error-container">
                     <ErrorMessage name="name" />
-                </p>
+                </p>}
             </div>
             <div className="field-item">
-                <Field className="text-input" type="email" name="email" placeholder="Email" />
-                <p className="error">
+                <Field className={errors.email && touched.email ? "text-input error" : "text-input"} type="email" name="email" placeholder="Email" />
+                {errors.email && touched.email && <p className="error-container">
                     <ErrorMessage name="email" />
-                </p>
+                </p>}
             </div>
             <div className="field-item">
-                <Field className="text-area" component="textarea" name="message" placeholder="Message..." />
-                <p className="error">
+                <Field className={errors.message && touched.message ? "text-area error" : "text-area"} component="textarea" name="message" placeholder="Message..." />
+                {errors.message && touched.message && <p className="error-container">
                     <ErrorMessage name="message" />
-                </p>
+                </p>}
             </div>
         </div>
         <button type="submit" className={isSubmitting ? 'button is-primary is-rounded is-medium is-loading' : 'button is-rounded is-primary is-medium'}>Submit</button>
@@ -53,7 +53,7 @@ const FormikForm = withFormik({
             setSubmitting(false)
             resetForm()
         }).catch((error) => {
-            console.log('FAILED SENDING CONTACT FORM', error);
+            console.error('FAILED SENDING CONTACT FORM', error);
             setSubmitting(false)
             resetForm()
         });;

@@ -8,6 +8,12 @@
         border-radius: 1rem;
         font-size: 1rem;
         outline: none;
+        &.error{
+            background: lighten($error-color, 35%);            
+            &::placeholder{
+                color: $error-color;
+            }
+        }
     }
     .text-area {
         @extend .text-input;
@@ -22,7 +28,10 @@
     .field-group {
         margin: 1rem 0;
     }
-    .error {
-        color: $error-color;
+    .error-container {
+        font-size: 0.8rem;
+        color: #ff3860;
+        display: flex;
+        margin-left: 0.9rem;
     }
 }
