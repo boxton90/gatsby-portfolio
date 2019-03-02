@@ -9,24 +9,24 @@ const ContactForm = ({ isSubmitting, errors, touched }) => (
         <div className="field-group">
             <div className="field-item">
                 <Field className={errors.name && touched.name ? "text-input error" : "text-input"} type="name" name="name" placeholder="Name" />
-                {errors.name && touched.name && <p className="error-container">
+                <p className="error-container">
                     <ErrorMessage name="name" />
-                </p>}
+                </p>
             </div>
             <div className="field-item">
                 <Field className={errors.email && touched.email ? "text-input error" : "text-input"} type="email" name="email" placeholder="Email" />
-                {errors.email && touched.email && <p className="error-container">
+                <p className="error-container">
                     <ErrorMessage name="email" />
-                </p>}
+                </p>
             </div>
             <div className="field-item">
                 <Field className={errors.message && touched.message ? "text-area error" : "text-area"} component="textarea" name="message" placeholder="Message..." />
-                {errors.message && touched.message && <p className="error-container">
+                <p className="error-container">
                     <ErrorMessage name="message" />
-                </p>}
+                </p>
             </div>
         </div>
-        <button type="submit" className={isSubmitting ? 'button is-primary is-rounded is-medium is-loading' : 'button is-rounded is-primary is-medium'}>Submit</button>
+        <button type="submit" className={isSubmitting ? 'button is-primary is-rounded is-medium is-loading' : 'button is-rounded is-primary is-medium'}><span>Submit</span></button>
     </Form>
 )
 
