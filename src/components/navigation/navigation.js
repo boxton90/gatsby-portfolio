@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import OutboundButton from '../../components/buttons/outboundButton'
 import Emoji from '../../components/emoji/emoji'
 import { StaticQuery, graphql } from "gatsby"
 
@@ -119,7 +118,7 @@ class Navigation extends Component {
                                     return <div className="navbar-item" key={index}><a data-view={'#' + item} className="navbar-item" onClick={this.onClickLink}>{item}</a></div>
                                 })}
                                 <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
-                                    <a className="button is-primary" data-view="#contact" onClick={this.onClickLink}><span>{data.contentfulNavigation.button.content} <Emoji emoji={data.contentfulNavigation.button.emoji} /></span></a>
+                                    <button className="button is-primary" data-view="#contact" onClick={this.onClickLink}><span>{data.contentfulNavigation.button.content} <Emoji emoji={data.contentfulNavigation.button.emoji} /></span></button>
                                 </div>
                             </div>
                         </div>

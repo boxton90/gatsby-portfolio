@@ -4,6 +4,8 @@ import Emoji from "../../components/emoji/emoji";
 import HighlightedTitle from "../../components/highlightedTitle/highlightedTitle";
 import { StaticQuery, graphql } from "gatsby";
 
+
+
 export default () => (
   <StaticQuery
     query={graphql`
@@ -22,7 +24,7 @@ export default () => (
       }
     `}
     render={data => (
-      <section data-aos="fade-up" className={`section has-text-centered is-section-up ${data.contentfulAnnouncement.show ? null : 'is-hidden'}`}>
+      <section data-aos="fade-up" className={`section has-text-centered is-section-up ${data.contentfulAnnouncement.show ? '' : 'is-hidden'}`}>
         <div className="container is-narrow">
           <div className="box">
             <div className="columns level">

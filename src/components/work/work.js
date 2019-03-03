@@ -3,7 +3,6 @@ import Card from '../../components/card/card'
 import LinkButton from '../../components/buttons/linkButton'
 import HighlightedTitle from '../../components/highlightedTitle/highlightedTitle'
 import { StaticQuery, graphql } from "gatsby"
-import { Link } from 'gatsby'
 
 class Work extends Component {
 
