@@ -8,19 +8,19 @@ const ContactForm = ({ isSubmitting, errors, touched }) => (
     <Form className="form">
         <div className="field-group">
             <div className="field-item">
-                <Field className={`text-input ${(errors.name && touched.name) ? 'error' : ''}`} type="name" name="name" placeholder="Name" />
+                <Field className={`text-input ${(errors.name && touched.name) ? 'error' : ''}`} type="name" name="name" placeholder="Name*" />
                 <p className="error-container">
                     <ErrorMessage name="name" />
                 </p>
             </div>
             <div className="field-item">
-                <Field className={`text-input ${(errors.email && touched.email) ? 'error' : ''}`} type="email" name="email" placeholder="Email" />
+                <Field className={`text-input ${(errors.email && touched.email) ? 'error' : ''}`} type="email" name="email" placeholder="Email*" />
                 <p className="error-container">
                     <ErrorMessage name="email" />
                 </p>
             </div>
             <div className="field-item">
-                <Field className={`text-area ${(errors.message && touched.message) ? 'error' : ''}`} component="textarea" name="message" placeholder="Message..." />
+                <Field className={`text-area ${(errors.message && touched.message) ? 'error' : ''}`} component="textarea" name="message" placeholder="Message*" />
                 <p className="error-container">
                     <ErrorMessage name="message" />
                 </p>
