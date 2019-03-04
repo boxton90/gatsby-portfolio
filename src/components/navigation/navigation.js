@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Emoji from '../../components/emoji/emoji'
 import { StaticQuery, graphql } from "gatsby"
+import { doScrollIntoView } from '../../navigation/navigation'
 
 class Navigation extends Component {
 
@@ -62,22 +63,14 @@ class Navigation extends Component {
         }
     }
 
-    doScrollIntoView = (e) => {
-        const view = e.currentTarget.dataset.view;
-        document.querySelector(`${view}`).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-
     onClickLink = (e) => {
-        this.doScrollIntoView(e);
+        doScrollIntoView(e);
         this.toggleMenu();
         this.handleScroll();
     }
 
     onClickLogo = (e) => {
-        this.doScrollIntoView(e);
+        doScrollIntoView(e);
         this.handleScroll();
     }
 

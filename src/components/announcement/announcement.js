@@ -1,10 +1,8 @@
 import React from "react";
-import OutboundButton from "../../components/buttons/outboundButton";
 import Emoji from "../../components/emoji/emoji";
 import HighlightedTitle from "../../components/highlightedTitle/highlightedTitle";
 import { StaticQuery, graphql } from "gatsby";
-
-
+import { doScrollIntoView } from '../../navigation/navigation'
 
 export default () => (
   <StaticQuery
@@ -36,7 +34,7 @@ export default () => (
                 <p>{data.contentfulAnnouncement.desc.desc}</p>
               </div>
               <div className="column level-item">
-                <OutboundButton href="mailto:boxton.da@gmail.com" type="primary" size="medium" border="outlined">{data.contentfulAnnouncement.button.content} <Emoji emoji={data.contentfulAnnouncement.button.emoji} /></OutboundButton>
+                <button className="button is-primary is-medium is-outlined" data-view="#contact" onClick={doScrollIntoView}>{data.contentfulAnnouncement.button.content} <Emoji emoji={data.contentfulAnnouncement.button.emoji} /></button>
               </div>
             </div>
           </div>
