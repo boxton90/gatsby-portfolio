@@ -71,9 +71,9 @@ class Projects extends Component {
             </section>
             <section className="section has-content-centered">
               <div className="container is-fullhd">
-                <div className="columns">
+                <div className="columns is-multiline">
                   {data.allContentfulProject.edges.map((project, key) => {
-                    return (<div key={key} data-aos="zoom-in" className="column"><Card contentData={project.node}></Card></div>);
+                    return (<div key={key} data-aos="zoom-in" className="column is-one-third"><Card contentData={project.node}></Card></div>);
                   })}
                 </div>
               </div>
