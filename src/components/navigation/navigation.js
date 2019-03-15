@@ -108,9 +108,9 @@ class Navigation extends Component {
                         <div className={`navbar-menu ${(this.state.isMenuActive) ? "is-active" : ''}`}>
                             <div className="navbar-end">
                                 {data.contentfulNavigation.items.map((item, index) => {
-                                    return <div className="navbar-item" key={index}><a data-view={'#' + item} className="navbar-item" onClick={this.onClickLink}>{item}</a></div>
+                                    return <div data-aos="fade-left" className="navbar-item" key={index}><a data-view={'#' + item} className="navbar-item" onClick={this.onClickLink}>{item}</a></div>
                                 })}
-                                <div data-aos="fade-left" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
+                                <div data-aos="fade-up" className={`navbar-item cta ${(this.state.isCTAVisible) ? '' : 'is-hidden'}`}>
                                     <button className="button is-primary" data-view="#contact" onClick={this.onClickLink}><span>{data.contentfulNavigation.button.content} <Emoji emoji={data.contentfulNavigation.button.emoji} /></span></button>
                                 </div>
                             </div>

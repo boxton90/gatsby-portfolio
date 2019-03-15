@@ -1,8 +1,5 @@
 nav {
     transition: background-color $ease-in-out-transition;
-    &.navbar.is-transparent{
-        background-color: transparent;
-    }
     .logo{
         padding: 0;
         margin: .5rem;
@@ -18,6 +15,12 @@ nav {
             border-bottom: none;
         }
     }
+    &.navbar{
+        &.is-transparent{
+            background-color: transparent;
+        }
+        &.is-fixed-top .navbar-menu{
+            overflow: hidden;
+        }
+    }
 }
-
-
