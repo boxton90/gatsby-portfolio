@@ -18,10 +18,11 @@ import Work from './work/work'
 import About from './about/about'
 import Contact from './contact/contact'
 import Footer from './footer/footer'
+import Contribute from './contribute/contribute'
 
 library.add(fab, faAngleDoubleDown)
 class Layout extends Component {
-  
+
   componentDidMount() {
     AOS.init({
       // Global settings
@@ -30,7 +31,7 @@ class Layout extends Component {
       initClassName: 'aos-init', // class applied after initialization
       animatedClassName: 'aos-animate', // class applied on animation
       useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    
+
       // Settings that can be overriden on per-element basis, by `data-aos-*` attributes:
       offset: 120, // offset (in px) from the original trigger point
       delay: 0, // values from 0 to 3000, with step 50ms
@@ -52,6 +53,7 @@ class Layout extends Component {
         <Skills></Skills>
         <Work></Work>
         <About></About>
+        <Contribute></Contribute>
         <Contact></Contact>
         <Footer></Footer>
       </div>

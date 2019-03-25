@@ -24,6 +24,10 @@
             background-color: $brand-twitter-color;
             border-color: $brand-twitter-color;
         }
+        &.paypal{
+            background-color: $brand-paypal-color; 
+            border-color: $brand-paypal-color; 
+        }
         &:hover{
             color: #fff;
         }
